@@ -1,6 +1,7 @@
 ---
 // Component Imports
 import Counter from '../components/Counter';
+import CountUp from '../components/CountUp';
 
 const someProps = {
 	count: 0,
@@ -20,18 +21,26 @@ const someProps = {
 			html,
 			body {
 				font-family: system-ui;
-				margin: 0;
-			}
-			body {
-				padding: 2rem;
 			}
 		</style>
 	</head>
-	<body>
+	<body class="p-8 m-0">
 		<main>
 			<Counter {...someProps} client:visible>
-				<h1>Hello, React!</h1>
+				<h1>Hello, React! I'm a Developer!</h1>
 			</Counter>
+			<br><br><br><br>
+			<h1>
+				<CountUp
+				client:visible
+  				from={0}
+  				to={100}
+  				separator=","
+  				direction="up"
+  				duration={2}
+  				className="count-up-text"
+				/>
+			</h1>
 		</main>
 	</body>
 </html>
