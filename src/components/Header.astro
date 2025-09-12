@@ -1,0 +1,26 @@
+<header class="bg-gray-800 bg-opacity-50 backdrop-blur-lg p-4 fixed w-full top-0 z-50">
+  <nav class="container mx-auto flex justify-between items-center">
+    <a href="/" class="text-2xl font-bold text-green-400">AgroFuture</a>
+    <div class="hidden md:flex space-x-8">
+      <a href="#features" class="hover:text-green-300 transition-colors">Features</a>
+      <a href="#about" class="hover:text-green-300 transition-colors">About</a>
+      <a href="/contact" class="hover:text-green-300 transition-colors">Contact</a>
+    </div>
+    <button id="menu-btn" class="md:hidden block text-white">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </nav>
+  <div id="mobile-menu" class="hidden md:hidden">
+    <a href="#features" class="block py-2 px-4 text-sm hover:bg-gray-700">Features</a>
+    <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700">About</a>
+    <a href="/contact" class="block py-2 px-4 text-sm hover:bg-gray-700">Contact</a>
+  </div>
+</header>
+
+<script>
+  document.getElementById('menu-btn')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
+</script>

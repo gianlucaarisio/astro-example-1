@@ -1,46 +1,20 @@
 ---
-// Component Imports
-import Counter from '../components/Counter';
-import CountUp from '../components/CountUp';
-
-const someProps = {
-	count: 0,
-};
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Carousel from '../components/Carousel';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<style>
-			html,
-			body {
-				font-family: system-ui;
-			}
-		</style>
-	</head>
-	<body class="p-8 m-0">
-		<main>
-			<Counter {...someProps} client:visible>
-				<h1>Hello, React! I'm a Developer!</h1>
-			</Counter>
-			<br><br><br><br>
-			<h1>
-				<CountUp
-				client:visible
-  				from={0}
-  				to={100}
-  				separator=","
-  				direction="up"
-  				duration={2}
-  				className="count-up-text"
-				/>
-			</h1>
-		</main>
-	</body>
-</html>
+<Layout title="AgroFuture - Sustainable Farming" description="Welcome to AgroFuture, where we embrace sustainable farming practices for a greener tomorrow.">
+  <Header />
+  <main>
+    <Hero />
+    <Features />
+    <Carousel client:visible />
+    <CTA />
+  </main>
+  <Footer />
+</Layout>
