@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Gallery - AgroFuture" description="Browse our gallery of stunning images.">
+  <Header />
+  <main class="py-20">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold text-center text-green-400 mb-12">Gallery</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <img src={`https://picsum.photos/seed/${i + 1}/800/600`} alt={`Placeholder image ${i + 1}`} class="w-full h-64 object-cover" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

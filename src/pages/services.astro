@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+
+const services = [
+  {
+    title: 'Service One',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: '🚀',
+  },
+  {
+    title: 'Service Two',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: '💡',
+  },
+  {
+    title: 'Service Three',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: '📈',
+  },
+   {
+    title: 'Service Four',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: '⚙️',
+  },
+  {
+    title: 'Service Five',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: '🎨',
+  },
+  {
+    title: 'Service Six',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: '🔒',
+  },
+];
+---
+
+<Layout title="Our Services - AgroFuture" description="Discover the services we offer at AgroFuture.">
+  <Header />
+  <main class="py-20">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold text-center text-green-400 mb-12">Our Services</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map(service => (
+          <ServiceCard title={service.title} description={service.description} icon={service.icon} />
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
